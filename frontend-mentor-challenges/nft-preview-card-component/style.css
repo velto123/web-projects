@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+/*** The new CSS Reset - version 1.4.2 (last updated 30.11.2021) ***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+	all: unset;
+	display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+	list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+	max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+	border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+	white-space: revert;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly. */
+:where([contenteditable]) {
+	-moz-user-modify: read-write;
+	-webkit-user-modify: read-write;
+	overflow-wrap: break-word;
+	-webkit-line-break: after-white-space;
+}
+
+/* My CSS */
+
+html {
+	font-family: "Outfit", sans-serif;
+	font-size: 10px;
+}
+
+body {
+	background-color: hsl(217, 54%, 11%);
+}
+
+.card {
+	width: 33rem;
+	margin: 10rem auto 5rem auto;
+	background-color: hsl(216, 50%, 16%);
+	border-radius: 1rem;
+	font-size: 1.6rem;
+	font-weight: 300;
+	color: hsl(215, 51%, 70%);
+	box-shadow: 0 2rem 2rem hsl(217, 54%, 5%);
+}
+
+.main-img {
+	width: 28rem;
+	margin: 2.5rem;
+	border-radius: 1rem;
+}
+
+.name {
+	font-weight: 600;
+	font-size: 2.2rem;
+	margin-left: 2.5rem;
+}
+
+.description {
+	line-height: 1.6;
+	margin: 2rem 2.5rem;
+}
+
+.price-time {
+	display: flex;
+	margin: 0 2.5rem;
+	padding-bottom: 1.5rem;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 0.1rem solid hsl(215, 32%, 27%);
+}
+
+.price {
+	display: flex;
+	align-items: center;
+	color: hsl(178, 100%, 50%);
+}
+
+.promotion-time {
+	display: flex;
+	align-items: center;
+}
+
+.price img {
+	width: 1.2rem;
+}
+
+.promotion-time img {
+	width: 1.8rem;
+}
+
+.price img,
+.promotion-time img {
+	margin: 0 0.6rem 0 0;
+}
+
+.price,
+.promotion-time {
+	font-weight: 400;
+}
+
+.creation {
+	padding: 1.6rem 2.5rem 2.5rem 2.5rem;
+	display: flex;
+	align-items: center;
+}
+
+.creation img {
+	width: 3.5rem;
+	border: 0.1rem solid hsl(0, 0%, 100%);
+	border-radius: 50%;
+	margin: 0 1.6rem 0 0;
+}
+
+.name,
+.creation-name {
+	color: hsl(0, 0%, 100%);
+}
+
+/* Active states */
+
+.item {
+	position: relative;
+}
+.view {
+	position: absolute;
+	width: 28rem;
+	height: 28rem;
+	margin: 2.5rem;
+	border-radius: 1rem;
+	background-image: url(./images/icon-view.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	top: 0;
+	left: 0;
+	background-color: hsla(178, 100%, 50%, 0.5);
+	opacity: 0;
+	transition-property: background-color, background-image;
+	transition: 0.3s;
+}
+
+.view:hover,
+.view:active {
+	cursor: pointer;
+	opacity: 1;
+}
+
+.view:active {
+	background-color: hsla(178, 100%, 40%, 0.5);
+}
+
+.name:hover,
+.creation-name:hover {
+	cursor: pointer;
+	color: hsl(178, 100%, 50%);
+}
+
+.name:active,
+.creation-name:active {
+	color: hsl(178, 100%, 40%);
+}
+/* Attribution */
+
+.attribution {
+	font-size: 1.1rem;
+	text-align: center;
+	color: hsl(0, 0%, 100%);
+}
+
+.attribution a {
+	cursor: pointer;
+	color: hsl(178, 100%, 50%);
+}
+
+.attribution a:hover {
+	color: hsl(178, 100%, 40%);
+}
+
+.attribution a:active {
+	color: hsl(178, 100%, 30%);
+}
